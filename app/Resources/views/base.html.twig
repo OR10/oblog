@@ -2,12 +2,24 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <div id="wrapper">
+            {% block header %}{% endblock %}
+            <div class="container">
+                <div class="row">
+                    <div id="content" class="col-md-8">
+                        {% block content %}{% endblock %}
+                    </div>
+                    <div id="sidebar-right" class="col-md-4">
+                        {% block sidebar_right %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+            {% block footer %}{% endblock %}
+            {% block javascripts %}{% endblock %}
+        </div>
     </body>
 </html>
