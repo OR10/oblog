@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="home_page")
+     * @Route("/", name="home")
      */
     public function indexAction(Request $request)
     {
@@ -17,15 +17,15 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/posts", name="posts_page")
+     * @Route("/blog", name="blog")
      */
-    public function postsAction(Request $request)
+    public function blogAction(Request $request)
     {
-        return $this->render('default/test_layout.html');
+        return $this->render('default/blog_list.html');
     }
 
     /**
-     * @Route("/about", name="about_page")
+     * @Route("/about", name="about")
      */
     public function aboutAction(Request $request)
     {

@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Oles Dmytrenko{% endblock %}
+{% block title %}Site Name{% endblock %}
 
 {% block header %}
     <div id="header">
         <div class="container">
             <div class="row" name="header-row">
                 <div id="header-title" class="col-md-4" itemscope itemtype="https://schema.org/Organization">
-                    <a href="{{ path('home_page') }}" itemprop="url">
-                        <span name="title" itemprop="name">Oles Dmytrenko</span>
+                    <a href="{{ path('home') }}" itemprop="url">
+                        <span name="title" itemprop="name">Site Name</span>
                     </a>
                     <span itemscope itemtype="http://schema.org/Person">
                         <span name="author" itemprop="name">--- smile a lot ---</span>
@@ -18,15 +18,9 @@
                     <nav class="navbar navbar-expand-lg">
                         <div class="collapse navbar-collapse">
                             <ul class="navbar-nav mr-auto" name="navbar-items">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#">КЕК</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Лоток кота</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Блог</a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li class="nav-item dropdown" id="blog-dropdown">
+                                    <a href="{{ path('blog') }}" class="nav-link" role="button" aria-haspopup="true" aria-expanded="false">Блог</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" name="dropdown-block">
                                         <a class="dropdown-item" href="#">Психология</a>
                                         <a class="dropdown-item" href="#">Философия</a>
                                         <a class="dropdown-item" href="#">Программирование</a>
@@ -34,10 +28,7 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Галерея</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Выход в космос</a>
+                                    <a href="{{ path('about') }}" class="nav-link">Обо мне</a>
                                 </li>
                             </ul>
                         </div>
@@ -49,7 +40,13 @@
 {% endblock %}
 
 {% block footer %}
-    <div id="footer">Footer</div>
+    <div id="footer">
+        <div class="container">
+            <span class="align-middle">
+                <b>2018</b>
+            </span>
+        </div>
+    </div>
 {% endblock %}
 
 {% block stylesheets %}
