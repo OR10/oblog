@@ -18,7 +18,7 @@ class Post
     private $id;
 
     /**
-     * @ORM\Column(name="post_title", type="string", length=150)
+     * @ORM\Column(name="post_title", type="string", length=150, unique=true)
      */
     private $title;
 
@@ -36,9 +36,14 @@ class Post
     private $categoryId;
 
     /**
-     * @ORM\Column(name="posted_date", type="date", length=30)
+     * @ORM\Column(name="post_slug", type="string", length=150, unique=true)
      */
-    private $postedDate;
+    private $slug;
+
+    /**
+     * @ORM\Column(name="created_date", type="date", length=30)
+     */
+    private $createdDate;
 
     /**
      * @ORM\Column(name="updated_date", type="date", length=30)
@@ -89,14 +94,25 @@ class Post
         return $this;
     }
 
-    public function getPostedDate()
+    public function getSlug()
     {
-        return $this->postedDate;
+        return $this->slug;
     }
      
-    public function setPostedDate($postedDate)
+    public function setSlug($slug)
     {
-        $this->postedDate = $postedDate;
+        $this->slug = $slug;
+        return $this;
+    }    
+
+    public function getCreatedDate()
+    {
+        return $this->createdDate;
+    }
+     
+    public function setCreatedDate($createdDate)
+    {
+        $this->createdDate = $createdDate;
         return $this;
     }
 

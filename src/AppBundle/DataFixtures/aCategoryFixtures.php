@@ -10,12 +10,13 @@ class aCategoryFixtures extends Fixture
 {
 	public function load(ObjectManager $manager)
 	{
-		$categories = array('Психология', 'Философия', 'Программирование', 'Саморазвитие', 'Разное');
+		$categories = array(['Психология', 'psychology'], ['Философия', 'phylosophy'], ['Саморазвитие', 'growth'], ['Жиза', 'life']);
 
 		$i = 1;
 		foreach ($categories as $value) {
 			$category = new Category();
-			$category->setCategoryName($value);
+			$category->setName($value[0]);
+			$category->setSlug($value[1]);
 			$manager->persist($category);
 			
 			$this->addReference('category_number'.$i, $category);

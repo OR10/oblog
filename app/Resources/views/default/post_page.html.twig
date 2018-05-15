@@ -1,0 +1,26 @@
+{% extends 'default/index.html.twig' %}
+
+{% block content %}
+	{% if post is defined and post|length > 0 %}
+		<h1 style="text-align: center;">{{ post.title }}</h1>
+			<div class="post-page">
+				<div class="post-text">
+					{{ post.text }}
+				</div>
+				<div class="post-details">
+					<span class="post-category">
+						<a href="#">{{ post.categoryId.name }}</a>
+					</span>
+					<span class="post-date">
+						{{ post.createdDate|date("Y-m-d") }}
+					</span>
+				</div>
+			</div>
+	{% else %}
+		{{ 'No posts have been found' }}
+	{% endif %}
+{% endblock %}
+
+{% block sidebar_right %}
+    	<!-- {{ 'ko   kok kokko kok kokko kok kokko kok  kokko k ok kokko kok kokko kok kokko kok kokko kok kokko kok kokko kok kokko kok kokko kok kokko kok kokko kok kokko kok kokko kok kok kok kokko kok kokko kok kokko  kok kokko kok kokko kok kokko kok kokko kok ko kko ko  kokko kok kokko kok kokko kok k  okkok kokko kok kokko kok kokko kok kokko k ok kokko kok kokko kok kokko kok kokko kok kokko kok  ofas asdas dasdasdas dfasdf afa sf a sas das dasdasdas dfasdf a fa sfasasdas dasdasdas dfa sdf afa sfasasdas dasdasdas dfasdf  afa sfasasdas dasdasda s dfasdf afa sfasa sdas  dasda sdas d fasdf<br><br>' }}  -->   
+{% endblock %}

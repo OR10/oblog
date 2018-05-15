@@ -1,0 +1,25 @@
+{% extends 'default/index.html.twig' %}
+
+{% block content %}
+	<h1 style="text-align: center;">{{ page_title }}</h1>
+	{% for post in posts %}
+		<div class="single-post">
+			<h2 class="post-title"><a href="{{ path('post_page', {'categorySlug': post.categoryId.slug, 'postSlug': post.slug}) }}">{{ post.title }}</a></h2>
+			<div class="post-preview">
+				{{ post.text|slice(0, 250) ~ '...'  }}
+			</div>
+			<div class="post-details">
+				<span class="post-category">
+					<a href="#">{{ post.categoryId.name }}</a>
+				</span>
+				<span class="post-date">
+					{{ post.createdDate|date("Y-m-d") }}
+				</span>
+			</div>
+		</div>
+	{% endfor %}
+{% endblock %}
+
+{% block sidebar_right %}
+    	<!-- {{ 'ko   kok kokko kok kokko kok kokko kok  kokko k ok kokko kok kokko kok kokko kok kokko kok kokko kok kokko kok kokko kok kokko kok kokko kok kokko kok kokko kok kokko kok kok kok kokko kok kokko kok kokko  kok kokko kok kokko kok kokko kok kokko kok ko kko ko  kokko kok kokko kok kokko kok k  okkok kokko kok kokko kok kokko kok kokko k ok kokko kok kokko kok kokko kok kokko kok kokko kok  ofas asdas dasdasdas dfasdf afa sf a sas das dasdasdas dfasdf a fa sfasasdas dasdasdas dfa sdf afa sfasasdas dasdasdas dfasdf  afa sfasasdas dasdasda s dfasdf afa sfasa sdas  dasda sdas d fasdf<br><br>' }}  -->   
+{% endblock %}

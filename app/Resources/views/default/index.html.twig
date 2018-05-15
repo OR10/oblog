@@ -19,12 +19,12 @@
                         <div class="collapse navbar-collapse">
                             <ul class="navbar-nav mr-auto" name="navbar-items">
                                 <li class="nav-item dropdown" id="blog-dropdown">
-                                    <a href="{{ path('blog') }}" class="nav-link" role="button" aria-haspopup="true" aria-expanded="false">Блог</a>
+                                    <a href="{{ path('blog_all') }}" class="nav-link" role="button" aria-haspopup="true" aria-expanded="false">Блог</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown" name="dropdown-block">
-                                        <a class="dropdown-item" href="#">Психология</a>
-                                        <a class="dropdown-item" href="#">Философия</a>
-                                        <a class="dropdown-item" href="#">Программирование</a>
-                                        <a class="dropdown-item" href="#">Жиза</a>
+                                        <a class="dropdown-item" href="{{ path('blog_psychology') }}">Психология</a>
+                                        <a class="dropdown-item" href="{{ path('blog_phylosophy') }}">Философия</a>
+                                        <a class="dropdown-item" href="{{ path('blog_growth') }}">Саморазвитие</a>
+                                        <a class="dropdown-item" href="{{ path('blog_life') }}">Жиза</a>
                                     </div>
                                 </li>
                                 <li class="nav-item">

@@ -18,9 +18,14 @@ class Category
     private $id;
 
     /**
-     * @ORM\Column(name="category_name", type="string", length=100)
+     * @ORM\Column(name="category_name", type="string", length=100, unique=true)
      */
-    private $categoryName;
+    private $name;
+
+    /**
+     * @ORM\Column(name="category_slug", type="string", length=100, unique=true)
+     */
+    private $slug;
 
     public function getId()
     {
@@ -33,14 +38,25 @@ class Category
         return $this;
     }
 
-    public function getCategoryName()
+    public function getName()
     {
-        return $this->categoryName;
+        return $this->name;
     }
      
-    public function setCategoryName($categoryName)
+    public function setName($name)
     {
-        $this->categoryName = $categoryName;
+        $this->name = $name;
+        return $this;
+    }
+
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+     
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
         return $this;
     }
 }

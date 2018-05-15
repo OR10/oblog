@@ -17,14 +17,6 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/blog", name="blog")
-     */
-    public function blogAction(Request $request)
-    {
-        return $this->render('default/blog_list.html');
-    }
-
-    /**
      * @Route("/about", name="about")
      */
     public function aboutAction(Request $request)
@@ -32,5 +24,13 @@ class DefaultController extends Controller
         return $this->render('default/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
+    }
+
+    public function getBlogCategories()
+    {
+        $this->categoryRepository = $this->getDoctrine()->getRepository('AppBundle:Category');
+        $categories = $this->categoryRepository->findAll();
+
+        return $categories;
     }
 }

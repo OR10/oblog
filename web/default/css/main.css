@@ -1,9 +1,15 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
 body {
 	margin: 0;
 	font-family: Charter;
+	font-size: 18px;
+	margin-bottom: 75px;
 }
 a {
-	color: black;
+	color: inherit;
 }
 a:hover {
 	color: #650075;
@@ -12,6 +18,7 @@ a:hover {
 #header {	
 	/*background: linear-gradient(180deg, #fffc00, #ffffff);	*/
 	/*height: 150px;*/
+	/*border-bottom: solid 1px lightgrey;*/
 	width: 100%;
 	text-align: center;
 	background: #fffc00;
@@ -36,6 +43,9 @@ a:hover {
 #header-nav ul[name="navbar-items"] {
 	margin-left: auto;
 }
+#blog-dropdown div[name="dropdown-block"] {
+	margin-top: -5px;
+}
 #content-wrapper {
 	float: left;
 	width: 70%;
@@ -45,6 +55,8 @@ a:hover {
 	width: 30%;
 }
 #footer {
+    position: absolute;
+    bottom: 0;
 	display: flex;
 	align-items: center;
 	margin-bottom: 0;
@@ -53,10 +65,30 @@ a:hover {
 	text-align: center;
 	/*height: 100px;*/
 	/*background: linear-gradient(0deg, #fffc00, #ffffff);*/
+	/*border-top: solid 1px lightgrey;*/
 	background: #fffc00;
 	height: 75px;
 }
 #content, #sidebar-right {
-	min-height: 600px;
 	padding: 15px;
+}
+.single-post {
+	margin-top: 30px;
+	padding-top: 30px;
+	border-top: solid 1px lightgrey;
+	clear: both;
+}
+.post-title a:hover {
+	color: #ece018;	
+}
+.post-details {
+	color: #aaa;
+	margin-top: 20px;
+}
+.post-category a:hover {
+	color: #38951D;
+	color: #c1ba42;
+}
+.post-date {
+	float: right;
 }
